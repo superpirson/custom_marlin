@@ -139,6 +139,13 @@
 // Define this to have the electronics keep the power supply off on startup. If you don't know what this is leave it.
 //#define PS_DEFAULT_OFF
 
+//This checks if the pin on the other end of this line is high. If it is, the printer will stop immeditly. This bypasses all other software and is invoked by the inturrupt handler.
+#define EMERGENCY_STOP_PINS 32
+
+
+
+
+
 // @section temperature
 
 //===========================================================================
@@ -234,7 +241,7 @@
 
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
-#define BANG_MAX 255 // limits current to nozzle while in bang-bang mode; 255=full current
+#define BANG_MAX 150 // limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #if ENABLED(PIDTEMP)
   //#define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
@@ -493,6 +500,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // @section machine
 
 // Travel limits after homing (units are in mm)
+//TODO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
@@ -542,7 +550,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // @section bedlevel
 
-//#define AUTO_BED_LEVELING_FEATURE // Delete the comment to enable (remove // at the start of the line)
+#define AUTO_BED_LEVELING_FEATURE // Delete the comment to enable (remove // at the start of the line)
 //#define DEBUG_LEVELING_FEATURE
 #define Z_MIN_PROBE_REPEATABILITY_TEST  // If not commented out, Z Probe Repeatability test will be included if Auto Bed Leveling is Enabled.
 
@@ -564,6 +572,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   #define AUTO_BED_LEVELING_GRID
 
   #if ENABLED(AUTO_BED_LEVELING_GRID)
+//TODO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     #define LEFT_PROBE_BED_POSITION 15
     #define RIGHT_PROBE_BED_POSITION 170
@@ -606,6 +615,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   //    |           |
   //    O-- FRONT --+
   //  (0,0)
+  
   #define X_PROBE_OFFSET_FROM_EXTRUDER 10  // X offset: -left  +right  [of the nozzle]
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 10  // Y offset: -front +behind [the nozzle]
   #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
@@ -695,7 +705,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration in mm/s^2 for travel (non printing) moves
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
-#define DEFAULT_XYJERK                20.0    // (mm/sec)
+#define DEFAULT_XYJERK                10.0    // (mm/sec)
 #define DEFAULT_ZJERK                 0.4     // (mm/sec)
 #define DEFAULT_EJERK                 5.0    // (mm/sec)
 

@@ -340,6 +340,16 @@ void checkHitEndstops() {
 // Check endstops - Called from ISR!
 inline void update_endstops() {
 
+//emergency stop pin check
+#ifdef EMERGENCY_STOP_PIN
+  if digitalRead(EMERGENCY_STOP_PIN){
+        card.sdprinting = false;
+        card.closefile();
+        quickStop();
+        disable_all_heaters(); // switch off all heaters.
+        
+  }
+ #endif
   #if ENABLED(Z_DUAL_ENDSTOPS)
     uint16_t
   #else
