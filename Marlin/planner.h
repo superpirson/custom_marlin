@@ -196,3 +196,4 @@ FORCE_INLINE block_t* plan_get_current_block() {
 void reset_acceleration_rates();
 
 #endif // PLANNER_H
+

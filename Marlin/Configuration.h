@@ -85,10 +85,10 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Alex Patton" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
-//#define STRING_SPLASH_LINE2 STRING_DISTRIBUTION_DATE // will be shown during bootup in line 2
+#define STRING_SPLASH_LINE2 "comp:"__TIME__ __DATE__ // will be shown during bootup in line 2
 
 // @section machine
 
@@ -501,11 +501,11 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // Travel limits after homing (units are in mm)
 //TODO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#define X_MIN_POS 0
+#define X_MIN_POS -20
 #define Y_MIN_POS 0
-#define Z_MIN_POS 0
-#define X_MAX_POS 200
-#define Y_MAX_POS 200
+#define Z_MIN_POS -20
+#define X_MAX_POS 245
+#define Y_MAX_POS 280
 #define Z_MAX_POS 200
 
 //===========================================================================
@@ -574,9 +574,9 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 //TODO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    #define LEFT_PROBE_BED_POSITION 15
+    #define LEFT_PROBE_BED_POSITION 30
     #define RIGHT_PROBE_BED_POSITION 170
-    #define FRONT_PROBE_BED_POSITION 20
+    #define FRONT_PROBE_BED_POSITION 30
     #define BACK_PROBE_BED_POSITION 170
 
     #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
@@ -616,8 +616,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   //    O-- FRONT --+
   //  (0,0)
   
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 10  // X offset: -left  +right  [of the nozzle]
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER 10  // Y offset: -front +behind [the nozzle]
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 0  // X offset: -left  +right  [of the nozzle]
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER -62  // Y offset: -front +behind [the nozzle]
   #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
   #define XY_TRAVEL_SPEED 8000         // X and Y axis travel speed between probes, in mm/min.
@@ -635,7 +635,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
   // A fix mounted probe, like the normal inductive probe, must be deactivated to go below Z_PROBE_OFFSET_FROM_EXTRUDER
   // when the hardware endstops are active.
-  //#define FIX_MOUNTED_PROBE
+  #define FIX_MOUNTED_PROBE
 
   // A Servo Probe can be defined in the servo section below.
 
@@ -664,8 +664,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // Manual homing switch locations:
 // For deltabots this means top and center of the Cartesian print volume.
 #if ENABLED(MANUAL_HOME_POSITIONS)
-  #define MANUAL_X_HOME_POS 0
-  #define MANUAL_Y_HOME_POS 0
+  #define MANUAL_X_HOME_POS -20
+  #define MANUAL_Y_HOME_POS -20
   #define MANUAL_Z_HOME_POS 0
   //#define MANUAL_Z_HOME_POS 402 // For delta: Distance between nozzle and print surface after homing.
 #endif
@@ -678,7 +678,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // - If stepper drivers time out, it will need X and Y homing again before Z homing.
 // - Position the Z probe in a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 2)    // X point for Z homing when homing all axis (G28).
@@ -707,7 +707,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
 #define DEFAULT_XYJERK                10.0    // (mm/sec)
 #define DEFAULT_ZJERK                 0.4     // (mm/sec)
-#define DEFAULT_EJERK                 5.0    // (mm/sec)
+#define DEFAULT_EJERK                 1.0    // (mm/sec)
 
 
 //=============================================================================
@@ -825,7 +825,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // SD Card support is disabled by default. If your controller has an SD slot,
 // you must uncomment the following option or it won't work.
 //
-//#define SDSUPPORT
+#define SDSUPPORT
 
 //
 // SD CARD: SPI SPEED
@@ -1143,3 +1143,4 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #include "thermistortables.h"
 
 #endif //CONFIGURATION_H
+

@@ -178,3 +178,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "チュウシン コウセイ"              // "Calibrate Center"
 
 #endif // LANGUAGE_KANA_UTF_H
+

@@ -42,3 +42,4 @@
   #define SD_DETECT_PIN 6
 
 #endif // NEWPANEL && ULTRA_LCD
+

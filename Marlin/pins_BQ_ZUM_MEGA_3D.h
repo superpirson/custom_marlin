@@ -82,3 +82,4 @@
   #define Z_MIN_PIN       19 // IND_S_5V
   #define Z_MAX_PIN       18 // Z-MIN Label
 #endif
+

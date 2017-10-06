@@ -84,3 +84,4 @@
   #define BEEPER_PIN 33
 
 #endif // ULTRA_LCD && NEWPANEL
+

@@ -689,3 +689,4 @@ const unsigned int dropsegments = 5; //everything with less than this number of 
 #include "SanityCheck.h"
 
 #endif //CONFIGURATION_ADV_H
+

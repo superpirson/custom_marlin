@@ -42,3 +42,4 @@ void dswap(int n, double x[], int incx, double y[], int incy);
 void qr_solve(double x[], int m, int n, double a[], double b[]);
 
 #endif
+

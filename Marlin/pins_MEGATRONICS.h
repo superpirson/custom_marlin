@@ -103,3 +103,4 @@
   #define SD_DETECT_PIN   -1   // RAMPS doesn't use this
 
 #endif // ULTRA_LCD && NEWPANEL
+

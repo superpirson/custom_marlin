@@ -187,3 +187,4 @@ FORCE_INLINE void autotempShutdown() {
 }
 
 #endif // TEMPERATURE_H
+

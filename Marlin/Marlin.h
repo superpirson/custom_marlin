@@ -381,3 +381,4 @@ extern uint8_t active_extruder;
 extern void calculate_volumetric_multipliers();
 
 #endif //MARLIN_H
+

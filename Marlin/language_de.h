@@ -172,3 +172,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "Kalibriere Mitte"
 
 #endif // LANGUAGE_DE_H
+

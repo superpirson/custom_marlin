@@ -117,3 +117,4 @@
 #define BLEN_A 0
 
 #define SD_DETECT_PIN -1  // Megatronics doesn't use this
+

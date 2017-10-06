@@ -34,3 +34,4 @@
 
 #undef HEATER_1_PIN
 #define HEATER_1_PIN       10   // EXTRUDER 2
+

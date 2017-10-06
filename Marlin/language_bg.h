@@ -159,3 +159,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "Калибровка Център"
 
 #endif // LANGUAGE_BG_H
+

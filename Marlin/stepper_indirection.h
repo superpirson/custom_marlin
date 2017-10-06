@@ -542,3 +542,4 @@
 #endif  //HAVE_L6470DRIVER
 
 #endif // STEPPER_INDIRECTION_H
+

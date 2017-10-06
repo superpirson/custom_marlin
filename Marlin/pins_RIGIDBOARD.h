@@ -119,3 +119,4 @@
 #define TEMP_BED_PIN       15   // ANALOG NUMBERING
 
 #define STEPPER_RESET_PIN  41   // Stepper drivers have a reset on RigidBot
+

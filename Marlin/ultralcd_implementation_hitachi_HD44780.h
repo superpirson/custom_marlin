@@ -976,3 +976,4 @@ void lcd_implementation_drawedit(const char* pstr, const char* value=NULL) {
 #endif // LCD_HAS_SLOW_BUTTONS
 
 #endif // ULTRALCD_IMPLEMENTATION_HITACHI_HD44780_H
+

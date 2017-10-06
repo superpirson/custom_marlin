@@ -158,3 +158,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "Kalibroi Center"
 
 #endif // LANGUAGE_FI_H
+

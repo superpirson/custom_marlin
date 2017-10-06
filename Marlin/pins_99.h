@@ -58,3 +58,4 @@
 #define TEMP_2_PIN         -1   // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
 #define HEATER_BED_PIN      4
 #define TEMP_BED_PIN       10
+

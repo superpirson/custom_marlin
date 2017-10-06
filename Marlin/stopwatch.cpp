@@ -98,3 +98,4 @@ uint16_t Stopwatch::duration() {
   }
 
 #endif
+

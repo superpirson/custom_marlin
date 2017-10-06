@@ -580,3 +580,4 @@ void lcd_implementation_drawedit(const char* pstr, const char* value=NULL) {
 #define lcd_implementation_drawmenu_function(sel, row, pstr, data) lcd_implementation_drawmenu_generic(sel, row, pstr, '>', ' ')
 
 #endif //__DOGM_LCD_IMPLEMENTATION_H
+

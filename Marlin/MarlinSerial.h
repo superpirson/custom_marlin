@@ -183,3 +183,4 @@ extern MarlinSerial customizedSerial;
 #endif
 
 #endif
+

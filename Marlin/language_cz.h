@@ -176,3 +176,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "Kalibrovat Stred"
 
 #endif // LANGUAGE_CZ_H
+

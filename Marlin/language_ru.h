@@ -170,3 +170,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "Калибровать Center"
 
 #endif // LANGUAGE_RU_H
+

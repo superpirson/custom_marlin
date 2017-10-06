@@ -171,3 +171,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "Kalibreer Midden"
 
 #endif // LANGUAGE_NL_H
+

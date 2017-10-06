@@ -175,3 +175,4 @@
 #define MSG_DELTA_CALIBRATE_CENTER          "\xc1\xad\xb3\xbc\xdd\x20\xba\xb3\xbe\xb2"                      // "ﾁｭｳｼﾝ ｺｳｾｲ" ("Calibrate Center")
 
 #endif // LANGUAGE_KANA_H
+
