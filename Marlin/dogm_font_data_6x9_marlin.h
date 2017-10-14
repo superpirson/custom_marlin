@@ -179,3 +179,4 @@ const u8g_fntpgm_uint8_t u8g_font_6x9[2300] U8G_SECTION(".progmem.u8g_font_6x9")
   8, 6, 1, 254, 80, 0, 144, 144, 144, 112, 144, 96
 };
 
+

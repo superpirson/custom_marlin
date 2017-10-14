@@ -193,3 +193,4 @@ const u8g_fntpgm_uint8_t HD44780_C_5x7[2522] U8G_SECTION(".progmem.HD44780_C_5x7
   0, 0, 248, 248, 248, 248, 248, 248, 248, 248
 };
 
+

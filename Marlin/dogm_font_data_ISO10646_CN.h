@@ -292,3 +292,4 @@ const u8g_fntpgm_uint8_t ISO10646_CN[4105] U8G_SECTION(".progmem.ISO10646_CN") =
   0, 35, 224, 34, 0, 34, 0, 34, 0
 };
 
+

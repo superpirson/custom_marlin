@@ -81,3 +81,4 @@ void apply_rotation_xyz(matrix_3x3 rotationMatrix, float& x, float& y, float& z)
 
 #endif // VECTOR_3_H
 
+

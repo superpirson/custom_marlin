@@ -179,3 +179,4 @@
 
 #endif // LANGUAGE_KANA_UTF_H
 
+

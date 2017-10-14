@@ -43,6 +43,10 @@
 
 /* The timer calculations of this module informed by the 'RepRap cartesian firmware' by Zack Smith
    and Philipp Tiefenbacher. */
+//for debug:
+
+
+
 
 #include "Marlin.h"
 #include "stepper.h"
@@ -52,6 +56,9 @@
 #include "language.h"
 #include "cardreader.h"
 #include "speed_lookuptable.h"
+
+
+
 
 #if HAS_DIGIPOTSS
   #include <SPI.h>
@@ -349,6 +356,10 @@ inline void update_endstops() {
         disable_all_heaters(); // switch off all heaters.
         
   }
+
+
+
+  
  #endif
   #if ENABLED(Z_DUAL_ENDSTOPS)
     uint16_t
@@ -369,6 +380,17 @@ inline void update_endstops() {
   #define COPY_BIT(bits, COPY_BIT, BIT) SET_BIT(bits, BIT, TEST(bits, COPY_BIT))
   // TEST_ENDSTOP: test the old and the current status of an endstop
   #define TEST_ENDSTOP(ENDSTOP) (TEST(current_endstop_bits, ENDSTOP) && TEST(old_endstop_bits, ENDSTOP))
+
+//Extra test that writes directly to the upper left corner of the screen if an endstop is triggered!
+if(TEST_ENDSTOP(X_MIN)){
+  u8g.drawBox(0, 0, 4, 4);
+}
+if(TEST_ENDSTOP(Y_MIN)){
+  u8g.drawBox(0, 5, 4, 9);
+}
+if(TEST_ENDSTOP(Z_MIN)){
+  u8g.drawBox(0, 10, 4, 14);
+}
 
   #if ENABLED(COREXY) || ENABLED(COREXZ)
 
@@ -1410,4 +1432,5 @@ void microstep_readings() {
   void Lock_z_motor(bool state) { locked_z_motor = state; }
   void Lock_z2_motor(bool state) { locked_z2_motor = state; }
 #endif
+
 

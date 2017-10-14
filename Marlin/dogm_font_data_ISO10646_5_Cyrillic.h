@@ -195,3 +195,4 @@ const u8g_fntpgm_uint8_t ISO10646_5_Cyrillic_5x7[2560] U8G_SECTION(".progmem.ISO
   136, 120, 8, 112, 5, 6, 6, 6, 0, 255, 136, 136, 136, 136, 248, 32
 };
 
+

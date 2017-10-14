@@ -191,3 +191,4 @@ const u8g_fntpgm_uint8_t ISO10646_Kana_5x7[2482] U8G_SECTION(".progmem.ISO10646_
   8, 8
 };
 
+

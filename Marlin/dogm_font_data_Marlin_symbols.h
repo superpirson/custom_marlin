@@ -44,3 +44,4 @@ const u8g_fntpgm_uint8_t Marlin_symbols[140] U8G_SECTION(".progmem.Marlin_symbol
   168, 136, 112, 3, 3, 3, 6, 0, 3, 64, 160, 64
 };
 
+
