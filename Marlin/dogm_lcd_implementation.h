@@ -56,6 +56,7 @@
 #include "ultralcd.h"
 #include "ultralcd_st7920_u8glib_rrd.h"
 #include "Configuration.h"
+#include "LCDHelperFunctions.h"
 
 #if DISABLED(MAPPER_C2C3) && DISABLED(MAPPER_NON) && ENABLED(USE_BIG_EDIT_FONT)
   #undef USE_BIG_EDIT_FONT
@@ -342,6 +343,20 @@ static void lcd_implementation_status_screen() {
 
   // Status Menu Font for SD info, Heater status, Fan, XYZ
   lcd_setFont(FONT_STATUSMENU);
+ #define _ENDSTOP_PIN(AXIS, MINMAX) AXIS ##_## MINMAX ##_PIN
+//Extra test that writes directly to the upper left corner of the screen if an endstop is triggered!
+if( digitalRead(_ENDSTOP_PIN(X,MIN))){//TEST_ENDSTOP(X_MIN)){
+ // debugDrawBox(0, 0, 4, 4);
+	u8g.drawBox(0, 0, 4, 4);
+}
+if(digitalRead(_ENDSTOP_PIN(Y,MIN))){//TEST_ENDSTOP(Y_MIN)){
+ // debugDrawBox(0, 5, 4, 4);
+u8g.drawBox(0, 5, 4, 4);
+}
+if(digitalRead(_ENDSTOP_PIN(Z,MIN))){//TEST_ENDSTOP(Z_MIN)){
+  //debugDrawBox(0, 10, 4, 4);
+u8g.drawBox(0, 10, 4, 4);
+}
 
   #if ENABLED(SDSUPPORT)
     // SD Card Symbol
@@ -573,6 +588,13 @@ void lcd_implementation_drawedit(const char* pstr, const char* value=NULL) {
   #define lcd_implementation_drawmenu_sddirectory(sel, row, pstr, filename, longFilename) _drawmenu_sd(sel, row, pstr, filename, longFilename, true)
 
 #endif //SDSUPPORT
+void debugDrawBox(int x, int y, int w, int h){
+	int temp = u8g.getColorIndex();
+ 	u8g.setColorIndex(1); // black on white
+	 u8g.drawBox(x, y, w, h);
+ 	u8g.setColorIndex(temp); 
+}
+
 
 #define lcd_implementation_drawmenu_back(sel, row, pstr) lcd_implementation_drawmenu_generic(sel, row, pstr, LCD_STR_UPLEVEL[0], LCD_STR_UPLEVEL[0])
 #define lcd_implementation_drawmenu_submenu(sel, row, pstr, data) lcd_implementation_drawmenu_generic(sel, row, pstr, '>', LCD_STR_ARROW_RIGHT[0])

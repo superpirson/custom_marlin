@@ -56,9 +56,12 @@
 #include "language.h"
 #include "cardreader.h"
 #include "speed_lookuptable.h"
+//for debug safety markers
+#include "LCDHelperFunctions.h"
+// dogm_lcd_implementation.h
+//#include "dogm_lcd_implementation.h"
 
-
-
+//#include <U8glib.h>
 
 #if HAS_DIGIPOTSS
   #include <SPI.h>
@@ -381,16 +384,6 @@ inline void update_endstops() {
   // TEST_ENDSTOP: test the old and the current status of an endstop
   #define TEST_ENDSTOP(ENDSTOP) (TEST(current_endstop_bits, ENDSTOP) && TEST(old_endstop_bits, ENDSTOP))
 
-//Extra test that writes directly to the upper left corner of the screen if an endstop is triggered!
-if(TEST_ENDSTOP(X_MIN)){
-  u8g.drawBox(0, 0, 4, 4);
-}
-if(TEST_ENDSTOP(Y_MIN)){
-  u8g.drawBox(0, 5, 4, 9);
-}
-if(TEST_ENDSTOP(Z_MIN)){
-  u8g.drawBox(0, 10, 4, 14);
-}
 
   #if ENABLED(COREXY) || ENABLED(COREXZ)
 
@@ -685,6 +678,18 @@ FORCE_INLINE void trapezoid_generator_reset() {
 // "The Stepper Driver Interrupt" - This timer interrupt is the workhorse.
 // It pops blocks from the block_buffer and executes them by pulsing the stepper pins appropriately.
 ISR(TIMER1_COMPA_vect) {
+
+
+//Extra test that writes directly to the upper left corner of the screen if an endstop is triggered!
+if( digitalRead(_ENDSTOP_PIN(X,MIN))){//TEST_ENDSTOP(X_MIN)){
+ // debugDrawBox(0, 0, 4, 4);
+}
+if(digitalRead(_ENDSTOP_PIN(Y,MIN))){//TEST_ENDSTOP(Y_MIN)){
+ // debugDrawBox(0, 5, 4, 4);
+}
+if(digitalRead(_ENDSTOP_PIN(Z,MIN))){//TEST_ENDSTOP(Z_MIN)){
+  //debugDrawBox(0, 10, 4, 4);
+}
 
   if (cleaning_buffer_counter) {
     current_block = NULL;
